@@ -2,20 +2,29 @@ import { DefaultTheme } from 'styled-components';
 
 export const theme: DefaultTheme = {
   colors: {
-    primary: '#0070f3',
-    secondary: '#00f7ff',
+    primary: '#007AFF',
+    secondary: '#86868b',
+    accent: '#06c',
     background: '#ffffff',
-    text: '#333333',
-    accent: '#6d28d9'
+    text: '#1d1d1f'
   },
   typography: {
-    fontFamily: "'Inter', sans-serif",
+    fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue'",
     sizes: {
-      h1: '3.5rem',
+      h1: '3rem',
       h2: '2.5rem',
       h3: '2rem',
       body: '1rem'
+    },
+    weights: {
+      regular: 400,
+      medium: 500,
+      semibold: 600,
+      bold: 700
     }
+  },
+  spacing: {
+    base: '8px'
   },
   grid: {
     container: '1200px'

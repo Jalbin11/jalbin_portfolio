@@ -8,6 +8,7 @@ import Projects from './components/Projects/Projects';
 import Skills from './components/Skills/Skills';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Layout/Footer/Footer';
+import Resume from './components/Resume/Resume'; // Ensure this import is correct
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Hero />
       <Projects />
       <Skills />
+      <Resume /> {/* Add Resume component here */}
       <Contact />
       <Footer />
     </ThemeProvider>
