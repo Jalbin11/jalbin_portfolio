@@ -89,6 +89,27 @@ export const CTAButton = styled(motion.a)`
   }
 `;
 
+export const CoolButton = styled.button`
+  padding: 1rem 2rem;
+  background: ${({ theme }) => theme.colors.primary};
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 10;
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.secondary};
+  }
+`;
+
+export const CoolText = styled.span`
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+`;
+
 export const BackgroundAnimation = styled(motion.div)`
   position: absolute;
   top: 0;
@@ -102,24 +123,20 @@ export const BackgroundAnimation = styled(motion.div)`
   );
   z-index: 0;
 `;
-export const ScrollIndicator = styled.div`
+
+export const SignatureAnimation = styled(motion.svg)`
   position: absolute;
-  bottom: 20px;
-  width: 30px;
-  height: 30px;
-  border: 2px solid #333;
-  border-radius: 50%;
-  animation: bounce 2s infinite;
-  
-  @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-      transform: translateY(0);
-    }
-    40% {
-      transform: translateY(-10px);
-    }
-    60% {
-      transform: translateY(-5px);
-    }
-  }
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 150px;
+  stroke: ${({ theme }) => theme.colors.primary};
+  stroke-width: 2;
+  fill: none;
+  z-index: 1;
+`;
+
+export const ScrollIndicator = styled.div`
+  display: none; /* Hide the scroll indicator */
 `;

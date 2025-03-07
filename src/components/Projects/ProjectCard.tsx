@@ -29,16 +29,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       whileHover={{ y: -10 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
-      <ProjectImage src={image} alt={title} />
-      <ProjectInfo>
-        <ProjectTitle>{title}</ProjectTitle>
-        <ProjectDescription>{description}</ProjectDescription>
-        <TechStack>
-          {technologies.map((tech) => (
-            <TechTag key={tech}>{tech}</TechTag>
-          ))}
-        </TechStack>
-      </ProjectInfo>
+      <a href={link} target="_blank" rel="noopener noreferrer">
+        <ProjectImage src={image} alt={title} />
+        <ProjectInfo>
+          <ProjectTitle>{title}</ProjectTitle>
+          <ProjectDescription>{description}</ProjectDescription>
+          <TechStack>
+            {technologies.map((tech) => (
+              <TechTag key={tech}>{tech}</TechTag>
+            ))}
+          </TechStack>
+        </ProjectInfo>
+      </a>
     </Card>
   );
 };

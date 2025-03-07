@@ -23,7 +23,7 @@ const Header: React.FC = () => {
       <Logo>JA</Logo>
       <Nav>
         <NavItems>
-          {['Home', 'Projects', 'Skills', 'Resume', 'Contact'].map((item) => (
+          {['Home', 'About', 'Skills', 'Experience', 'Projects','Contact'].map((item) => (
             <motion.li
               key={item}
               whileHover={{ y: -2 }}

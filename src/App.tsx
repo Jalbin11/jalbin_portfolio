@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { theme } from './styles/theme';
+import { lightTheme, darkTheme } from './styles/theme';
 import GlobalStyles from './styles/GlobalStyles';
 import Header from './components/Layout/Header/Header';
 import Hero from './components/Hero/Hero';
@@ -13,16 +13,22 @@ import Experience from './components/Experience/Experience';
 import Sidebar from './components/Layout/Sidebar/Sidebar';
 
 function App() {
+  const [theme, setTheme] = useState(lightTheme);
+
+  const toggleTheme = () => {
+    setTheme(theme === lightTheme ? darkTheme : lightTheme);
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Header />
       <Sidebar />
-      <Hero />
+      <Hero toggleTheme={toggleTheme} />
       <About />
+      <Skills />
       <Experience />
       <Projects />
-      <Skills />
       <Contact />
       <Footer />
     </ThemeProvider>

@@ -7,7 +7,9 @@ import {
   Subtitle, 
   CTAContainer,
   CTAButton,
-  ScrollIndicator
+  SignatureAnimation,
+  CoolButton,
+  CoolText
 } from './Hero.styles';
 
 const containerVariants = {
@@ -38,19 +40,47 @@ const itemVariants = {
   }
 };
 
-const Hero: React.FC = () => {
+const slideFromLeft = {
+  hidden: {
+    x: -100,
+    opacity: 0,
+  },
+  visible: (custom: number) => ({
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay: custom * 0.2,
+      duration: 0.8,
+      ease: 'easeInOut', // Updated easing function
+    },
+  }),
+};
+
+const Hero: React.FC<{ toggleTheme: () => void }> = ({ toggleTheme }) => {
+  const [coolActive, setCoolActive] = React.useState(false);
+
+  const handleCoolClick = () => {
+    setCoolActive(!coolActive);
+    toggleTheme();
+  };
+
   return (
     <HeroContainer>
+      <SignatureAnimation
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: 1 }}
+        transition={{ duration: 2, ease: 'easeInOut' }}
+      />
       <HeroContent
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <motion.div variants={itemVariants}>
+        <motion.div custom={0} variants={slideFromLeft} initial="hidden" animate="visible">
           <Title>Jacob Albin</Title>
         </motion.div>
 
-        <motion.div variants={itemVariants}>
+        <motion.div custom={1} variants={slideFromLeft} initial="hidden" animate="visible">
           <Subtitle>Data-Driven Growth Strategist & Full-Stack Automation Engineer</Subtitle>
         </motion.div>
 
@@ -69,8 +99,12 @@ const Hero: React.FC = () => {
           >
             Contact Me
           </CTAButton>
+          <CoolButton onClick={handleCoolClick}>
+            <CoolText>
+              {coolActive ? "Night Mode Activated!" : "Activate Night Mode"}
+            </CoolText>
+          </CoolButton>
         </CTAContainer>
-        <ScrollIndicator />
       </HeroContent>
     </HeroContainer>
   );

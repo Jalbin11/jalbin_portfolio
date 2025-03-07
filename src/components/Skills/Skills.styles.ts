@@ -6,10 +6,11 @@ export const SkillsSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 2rem; /* Add gap between carousels */
 `;
 
-export const SectionTitle = styled.h2`
-  font-size: ${({ theme }) => theme.typography.sizes.h2};
-  text-align: center;
-  margin-bottom: 2rem;
+export const CarouselLabel = styled.h2`
+  font-size: ${({ theme }) => theme.typography.sizes.body};
+  color: ${({ theme }) => theme.colors.secondary};
+  margin: 0.5rem 0;
 `;

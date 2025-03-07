@@ -1,12 +1,17 @@
 import React from 'react';
-import { SkillsSection, SectionTitle } from './Skills.styles';
+import { SkillsSection, CarouselLabel } from './Skills.styles';
 import SkillCarousel from '../Carousel/SkillCarousel';
+import skillsData from '../../data/skillsData';
 
 const Skills: React.FC = () => {
   return (
     <SkillsSection id="skills">
-      <SectionTitle>Skills & Technologies</SectionTitle>
-      <SkillCarousel />
+      <CarouselLabel>Languages</CarouselLabel>
+      <SkillCarousel skills={skillsData.techLanguages} />
+      <CarouselLabel>Automation & Data</CarouselLabel>
+      <SkillCarousel skills={skillsData.automationData} inverse />
+      <CarouselLabel>Business Intelligence</CarouselLabel>
+      <SkillCarousel skills={skillsData.biApps} />
     </SkillsSection>
   );
 };
