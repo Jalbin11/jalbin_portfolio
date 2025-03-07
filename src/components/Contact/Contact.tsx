@@ -5,7 +5,10 @@ import {
   FormGroup,
   Input,
   TextArea,
-  SubmitButton
+  SubmitButton,
+  Drawer,
+  DrawerContent,
+  DrawerButton
 } from './Contact.styles';
 
 const Contact: React.FC = () => {
@@ -14,6 +17,7 @@ const Contact: React.FC = () => {
     email: '',
     message: ''
   });
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -55,6 +59,21 @@ const Contact: React.FC = () => {
           Send Message
         </SubmitButton>
       </ContactForm>
+      <DrawerButton onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
+        Contact Info
+      </DrawerButton>
+      <Drawer $isOpen={isDrawerOpen}>
+        <DrawerContent>
+          <p>Email: JTA1303@gmail.com</p>
+          <p>Phone: (214) 883-5917</p>
+          <p>
+            <a href="https://www.linkedin.com/in/jacob-albin/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </p>
+          <p>
+            <a href="https://github.com/Jalbin11/jalbin_portfolio" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </p>
+        </DrawerContent>
+      </Drawer>
     </ContactSection>
   );
 };

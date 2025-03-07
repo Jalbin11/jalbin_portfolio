@@ -8,17 +8,21 @@ import Projects from './components/Projects/Projects';
 import Skills from './components/Skills/Skills';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Layout/Footer/Footer';
-import Resume from './components/Resume/Resume'; // Ensure this import is correct
+import About from './components/About/About';
+import Experience from './components/Experience/Experience';
+import Sidebar from './components/Layout/Sidebar/Sidebar';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Header />
+      <Sidebar />
       <Hero />
+      <About />
+      <Experience />
       <Projects />
       <Skills />
-      <Resume /> {/* Add Resume component here */}
       <Contact />
       <Footer />
     </ThemeProvider>

@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 
-export const ResumeContainer = styled.div`
+export const ExperienceSection = styled.section`
   padding: 100px 5%;
   background: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.text};
-`;
-
-export const Section = styled.section`
-  margin-bottom: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 `;
 
 export const SectionTitle = styled.h2`
@@ -15,11 +13,7 @@ export const SectionTitle = styled.h2`
   margin-bottom: 1rem;
 `;
 
-export const List = styled.ul`
-  list-style-type: disc;
-  padding-left: 1.5rem;
-`;
-
-export const ListItem = styled.li`
-  margin-bottom: 0.5rem;
+export const ExperienceTimeline = styled.div`
+  display: flex;
+  flex-direction: column;
 `;

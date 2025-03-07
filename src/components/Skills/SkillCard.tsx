@@ -1,20 +1,18 @@
 import React from 'react';
-import { Card, SkillIcon, SkillName } from './SkillCard.styles';
+import { Card, SkillLogo, SkillName } from './SkillCard.styles';
 
 interface SkillCardProps {
   name: string;
-  icon: string;
+  logo: string;
 }
 
-const SkillCard: React.FC<SkillCardProps> = ({ name, icon }) => (
-  <Card
-    whileHover={{ y: -5 }}
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-  >
-    <SkillIcon src={icon} alt={name} />
-    <SkillName>{name}</SkillName>
-  </Card>
-);
+const SkillCard: React.FC<SkillCardProps> = ({ name, logo }) => {
+  return (
+    <Card>
+      <SkillLogo src={logo} alt={`${name} logo`} />
+      <SkillName>{name}</SkillName>
+    </Card>
+  );
+};
 
 export default SkillCard;

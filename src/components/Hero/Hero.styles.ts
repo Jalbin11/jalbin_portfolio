@@ -102,3 +102,24 @@ export const BackgroundAnimation = styled(motion.div)`
   );
   z-index: 0;
 `;
+export const ScrollIndicator = styled.div`
+  position: absolute;
+  bottom: 20px;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  animation: bounce 2s infinite;
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+`;

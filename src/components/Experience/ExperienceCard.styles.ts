@@ -35,16 +35,12 @@ export const CardContainer = styled.div`
     font-size: ${({ theme }) => theme.typography.sizes.body};
     color: ${({ theme }) => theme.colors.text};
   }
-
-  &.baylor {
-    border: 2px solid #003015; /* Baylor green */
-    background: #f5f5f5; /* Light background */
-  }
 `;
 
 export const Logo = styled.img`
-  width: 100px; /* Increase the width */
-  height: auto;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
   margin-right: 1rem;
 `;
 
@@ -52,4 +48,23 @@ export const Header = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
+`;
+
+export const Content = styled.div`
+  font-size: ${({ theme }) => theme.typography.sizes.body};
+  color: ${({ theme }) => theme.colors.text};
+  ul {
+    padding-left: 1.5rem;
+  }
+`;
+
+export const BulletPoint = styled.li`
+  margin-bottom: 0.5rem;
+  &:before {
+    content: '•';
+    color: ${({ theme }) => theme.colors.accent};
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
 `;

@@ -6,7 +6,8 @@ import {
   Title, 
   Subtitle, 
   CTAContainer,
-  CTAButton 
+  CTAButton,
+  ScrollIndicator
 } from './Hero.styles';
 
 const containerVariants = {
@@ -50,7 +51,7 @@ const Hero: React.FC = () => {
         </motion.div>
 
         <motion.div variants={itemVariants}>
-          <Subtitle>Software Engineer & Full-Stack Developer</Subtitle>
+          <Subtitle>Data-Driven Growth Strategist & Full-Stack Automation Engineer</Subtitle>
         </motion.div>
 
         <CTAContainer variants={itemVariants}>
@@ -69,6 +70,7 @@ const Hero: React.FC = () => {
             Contact Me
           </CTAButton>
         </CTAContainer>
+        <ScrollIndicator />
       </HeroContent>
     </HeroContainer>
   );
