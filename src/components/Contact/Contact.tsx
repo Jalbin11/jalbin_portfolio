@@ -72,6 +72,9 @@ const Contact: React.FC = () => {
           <p>
             <a href="https://github.com/Jalbin11/jalbin_portfolio" target="_blank" rel="noopener noreferrer">GitHub</a>
           </p>
+          <p>
+            <a href="https://www.instagram.com/jacob.albin_/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </p>
         </DrawerContent>
       </Drawer>
     </ContactSection>

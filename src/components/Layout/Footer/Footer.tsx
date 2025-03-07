@@ -7,8 +7,9 @@ const Footer: React.FC = () => {
       <FooterContent>
         <div>© 2024 Jacob Albin. All rights reserved.</div>
         <SocialLinks>
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/Jalbin11" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/jacob-albin-540b80196/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.instagram.com/jacob.albin_/" target="_blank" rel="noopener noreferrer">Instagram</a>
         </SocialLinks>
       </FooterContent>
     </FooterContainer>
