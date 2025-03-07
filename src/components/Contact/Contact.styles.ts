@@ -66,3 +66,15 @@ export const DrawerButton = styled.button`
   border-radius: 4px 0 0 4px;
   cursor: pointer;
 `;
+
+export const SuccessMessage = styled(motion.div)`
+  background: ${({ theme }) => theme.colors.success};
+  color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  max-width: 600px;
+`;

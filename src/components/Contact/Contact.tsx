@@ -1,64 +1,73 @@
 import React, { useState } from 'react';
 import {
   ContactSection,
-  ContactForm,
   FormGroup,
   Input,
   TextArea,
   SubmitButton,
   Drawer,
   DrawerContent,
-  DrawerButton
+  DrawerButton,
+  SuccessMessage
 } from './Contact.styles';
+import { useForm, ValidationError } from '@formspree/react';
 
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [state, handleSubmit] = useForm("xzzepjeo");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Add form submission logic here
-  };
+  if (state.succeeded) {
+    return (
+      <ContactSection id="contact">
+        <SuccessMessage
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          Message received, thanks for reaching out! We'll be in touch soon.
+        </SuccessMessage>
+      </ContactSection>
+    );
+  }
 
   return (
     <ContactSection id="contact">
       <h2>Get In Touch</h2>
-      <ContactForm onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <FormGroup>
           <Input 
-            type="text"
-            placeholder="Name"
-            value={formData.name}
-            onChange={e => setFormData({...formData, name: e.target.value})}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Input 
+            id="email"
             type="email"
+            name="email"
             placeholder="Email"
-            value={formData.email}
-            onChange={e => setFormData({...formData, email: e.target.value})}
+          />
+          <ValidationError 
+            prefix="Email" 
+            field="email"
+            errors={state.errors}
           />
         </FormGroup>
         <FormGroup>
           <TextArea 
+            id="message"
+            name="message"
             placeholder="Message"
-            value={formData.message}
-            onChange={e => setFormData({...formData, message: e.target.value})}
+          />
+          <ValidationError 
+            prefix="Message" 
+            field="message"
+            errors={state.errors}
           />
         </FormGroup>
         <SubmitButton 
           type="submit"
+          disabled={state.submitting}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
           Send Message
         </SubmitButton>
-      </ContactForm>
+      </form>
       <DrawerButton onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
         Contact Info
       </DrawerButton>
