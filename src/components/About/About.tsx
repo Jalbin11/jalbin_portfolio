@@ -9,6 +9,8 @@ import {
   QuickReplyButton,
   TypingIndicator,
 } from './About.styles';
+import { BASE_URL } from '../../config';
+
 
 const bubbleVariants = {
   hidden: { 
@@ -24,6 +26,7 @@ const bubbleVariants = {
     }
   }
 };
+
 
 const About: React.FC = () => {
   const [showFirstBubble, setShowFirstBubble] = useState(false);
@@ -64,7 +67,7 @@ const About: React.FC = () => {
   return (
     <AboutSection id="about">
       <AboutContent>
-        <Headshot src="/assets/headshot.jpg" alt="Headshot" />
+        <Headshot src={`${BASE_URL}/assets/headshot.jpg`} alt="Headshot" />
         <Description>
           <h2>Jacob Albin: Innovating Automation for Efficiency and Observability</h2>
           {showFirstBubble && (

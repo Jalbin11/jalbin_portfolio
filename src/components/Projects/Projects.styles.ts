@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
 
 export const ProjectsSection = styled.section`
   padding: 100px 5%;

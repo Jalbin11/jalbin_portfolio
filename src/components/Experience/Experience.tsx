@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ExperienceSection, ExperienceTimeline, SectionTitle } from './Experience.styles';
 import ExperienceCard from './ExperienceCard';
 import { BulletPoint } from './ExperienceCard.styles';
+import { BASE_URL } from '../../config';
 
 const Experience: React.FC = () => {
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -27,7 +28,7 @@ const Experience: React.FC = () => {
           title="Baylor University"
           subtitle="Bachelor of BA - Management Information Systems and Supply Chain Management"
           date="May 2023 | GPA: 3.4"
-          logo="/assets/icons/baylor-logo.png"
+          logo="baylor-logo.png"
           link="https://www.baylor.edu/"
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -49,7 +50,7 @@ const Experience: React.FC = () => {
           title="Nike"
           subtitle="Warehouse Control Systems Analyst"
           date="June 2024 - Present"
-          logo="/assets/icons/nike-logo.png"
+          logo="nike-logo.png"
           link="https://www.nike.com/"
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
@@ -66,7 +67,7 @@ const Experience: React.FC = () => {
           title="Veryable"
           subtitle="Corporate Strategy Intern"
           date="August 2022 - December 2022"
-          logo="/assets/icons/veryable-logo.png"
+          logo="veryable-logo.png"
           link="https://www.veryableops.com/"
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }}
@@ -82,7 +83,7 @@ const Experience: React.FC = () => {
           title="Camp Longhorn"
           subtitle="Senior Staff Head Counselor"
           date="June 2016 - August 2021"
-          logo="/assets/icons/camp-logo.png"
+          logo="camp-logo.png"
           link="https://www.camplonghorn.com/"
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.8 }}
