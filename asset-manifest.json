@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/jalbin_portfolio/static/css/main.16162204.css",
-    "main.js": "/jalbin_portfolio/static/js/main.1ecf476b.js",
+    "main.js": "/jalbin_portfolio/static/js/main.df6a38d2.js",
     "static/media/revicons.eot": "/jalbin_portfolio/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/jalbin_portfolio/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/revicons.woff": "/jalbin_portfolio/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/jalbin_portfolio/index.html",
     "main.16162204.css.map": "/jalbin_portfolio/static/css/main.16162204.css.map",
-    "main.1ecf476b.js.map": "/jalbin_portfolio/static/js/main.1ecf476b.js.map"
+    "main.df6a38d2.js.map": "/jalbin_portfolio/static/js/main.df6a38d2.js.map"
   },
   "entrypoints": [
     "static/css/main.16162204.css",
-    "static/js/main.1ecf476b.js"
+    "static/js/main.df6a38d2.js"
   ]
 }
