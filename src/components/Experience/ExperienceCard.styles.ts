@@ -1,17 +1,20 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const CardContainer = styled.div`
+export const CardContainer = styled(motion.div)`
+  position: relative;
   background: ${({ theme }) => theme.colors.background};
   border: 1px solid ${({ theme }) => theme.colors.secondary};
   border-radius: 8px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 
   &:hover {
-    transform: scale(1.05);
+    transform: translateX(-10%);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* Bring card to front */
   }
 
   h3 {
@@ -42,6 +45,27 @@ export const Logo = styled.img`
   height: 60px;
   object-fit: contain;
   margin-right: 1rem;
+`;
+
+export const PeekabooContainer = styled.div`
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 30%; /* Cover 30% of the card */
+  overflow: hidden;
+  background: ${({ theme }) => theme.colors.background}; /* Solid background color */
+  transition: right 0.5s ease;
+
+  ${CardContainer}:hover & {
+    right: -30%; /* Slide off the card subtly */
+  }
+`;
+
+export const PeekabooLogo = styled.img`
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 `;
 
 export const Header = styled.div`

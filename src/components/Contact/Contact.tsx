@@ -1,19 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   ContactSection,
   FormGroup,
   Input,
   TextArea,
   SubmitButton,
-  Drawer,
-  DrawerContent,
-  DrawerButton,
   SuccessMessage
 } from './Contact.styles';
 import { useForm, ValidationError } from '@formspree/react';
 
 const Contact: React.FC = () => {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [state, handleSubmit] = useForm("xzzepjeo");
 
   if (state.succeeded) {
@@ -68,24 +64,6 @@ const Contact: React.FC = () => {
           Send Message
         </SubmitButton>
       </form>
-      <DrawerButton onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
-        Contact Info
-      </DrawerButton>
-      <Drawer $isOpen={isDrawerOpen}>
-        <DrawerContent>
-          <p>Email: JTA1303@gmail.com</p>
-          <p>Phone: (214) 883-5917</p>
-          <p>
-            <a href="https://www.linkedin.com/in/jacob-albin/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          </p>
-          <p>
-            <a href="https://github.com/Jalbin11/jalbin_portfolio" target="_blank" rel="noopener noreferrer">GitHub</a>
-          </p>
-          <p>
-            <a href="https://www.instagram.com/jacob.albin_/" target="_blank" rel="noopener noreferrer">Instagram</a>
-          </p>
-        </DrawerContent>
-      </Drawer>
     </ContactSection>
   );
 };

@@ -10,7 +10,6 @@ import Contact from './components/Contact/Contact';
 import Footer from './components/Layout/Footer/Footer';
 import About from './components/About/About';
 import Experience from './components/Experience/Experience';
-import Sidebar from './components/Layout/Sidebar/Sidebar';
 
 function App() {
   const [theme, setTheme] = useState(lightTheme);
@@ -23,12 +22,11 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Header />
-      <Sidebar />
       <Hero toggleTheme={toggleTheme} />
       <About />
       <Skills />
-      <Experience />
       <Projects />
+      <Experience />
       <Contact />
       <Footer />
     </ThemeProvider>

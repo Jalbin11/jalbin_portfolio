@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ExperienceSection, ExperienceTimeline, SectionTitle } from './Experience.styles';
 import ExperienceCard from './ExperienceCard';
 import { BulletPoint } from './ExperienceCard.styles';
 
 const Experience: React.FC = () => {
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(true);
+      window.removeEventListener('scroll', handleScroll);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <ExperienceSection id="experience">
       <SectionTitle>Education</SectionTitle>
@@ -13,6 +28,9 @@ const Experience: React.FC = () => {
           subtitle="Bachelor of BA - Management Information Systems and Supply Chain Management"
           date="May 2023 | GPA: 3.4"
           logo="/assets/icons/baylor-logo.png"
+          link="https://www.baylor.edu/"
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
         >
           <p>Dual BBA in Information Systems & Supply Chain Management, blending technical acumen with strategic business insights.</p>
           <ul>
@@ -32,6 +50,9 @@ const Experience: React.FC = () => {
           subtitle="Warehouse Control Systems Analyst"
           date="June 2024 - Present"
           logo="/assets/icons/nike-logo.png"
+          link="https://www.nike.com/"
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
         >
           <ul>
             <BulletPoint>Resolved 69+ high-priority incidents as technical production support for automated selecting and sortation solutions across all NA DCS, addressing both software and hardware issues.</BulletPoint>
@@ -46,6 +67,9 @@ const Experience: React.FC = () => {
           subtitle="Corporate Strategy Intern"
           date="August 2022 - December 2022"
           logo="/assets/icons/veryable-logo.png"
+          link="https://www.veryableops.com/"
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
         >
           <ul>
             <BulletPoint>Developed technical plans to optimize the automatic selection algorithm for the "Autofill" feature, projecting a 6% increase in daily demand fulfillment and $3.6 million in Annual Recurring Revenue (ARR).</BulletPoint>
@@ -59,6 +83,9 @@ const Experience: React.FC = () => {
           subtitle="Senior Staff Head Counselor"
           date="June 2016 - August 2021"
           logo="/assets/icons/camp-logo.png"
+          link="https://www.camplonghorn.com/"
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
         >
           <ul>
             <BulletPoint>Supported directors in managing a staff of 50+ counselors, providing leadership and guidance.</BulletPoint>
