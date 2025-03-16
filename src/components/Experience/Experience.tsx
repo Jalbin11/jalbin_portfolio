@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { ExperienceSection, ExperienceTimeline, SectionTitle } from './Experience.styles';
 import ExperienceCard from './ExperienceCard';
 import { BulletPoint } from './ExperienceCard.styles';
-import { BASE_URL } from '../../config';
 
 const Experience: React.FC = () => {
-  const [hasScrolled, setHasScrolled] = useState(false);
+    const [hasScrolled, setHasScrolled] = useState(false);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,9 +15,7 @@ const Experience: React.FC = () => {
 
     window.addEventListener('scroll', handleScroll);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -49,7 +47,7 @@ const Experience: React.FC = () => {
         <ExperienceCard
           title="Nike"
           subtitle="Warehouse Control Systems Analyst"
-          date="June 2024 - Present"
+          date="Jun 2024 - Present"
           logo="nike-logo.png"
           link="https://www.nike.com/"
           animate={{ x: 0, opacity: 1 }}
@@ -66,7 +64,7 @@ const Experience: React.FC = () => {
         <ExperienceCard
           title="Veryable"
           subtitle="Corporate Strategy Intern"
-          date="August 2022 - December 2022"
+          date="Aug 2022 - Dec 2022"
           logo="veryable-logo.png"
           link="https://www.veryableops.com/"
           animate={{ x: 0, opacity: 1 }}
@@ -82,7 +80,7 @@ const Experience: React.FC = () => {
         <ExperienceCard
           title="Camp Longhorn"
           subtitle="Senior Staff Head Counselor"
-          date="June 2016 - August 2021"
+          date="Jun 2016 - Aug 2021"
           logo="camp-logo.png"
           link="https://www.camplonghorn.com/"
           animate={{ x: 0, opacity: 1 }}

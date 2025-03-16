@@ -47,7 +47,7 @@ export const Logo = styled.img`
   margin-right: 1rem;
 `;
 
-export const PeekabooContainer = styled.div`
+export const PeekabooContainer = styled.div<{ bgColor: string }>`
   position: absolute;
   right: 0;
   top: 0;
@@ -56,6 +56,8 @@ export const PeekabooContainer = styled.div`
   overflow: hidden;
   background: ${({ theme }) => theme.colors.background}; /* Solid background color */
   transition: right 0.5s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: ${({ bgColor }) => bgColor};
 
   ${CardContainer}:hover & {
     right: -30%; /* Slide off the card subtly */

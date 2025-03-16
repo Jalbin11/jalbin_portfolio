@@ -15,6 +15,21 @@ interface ExperienceCardProps {
   transition?: any;
 }
 
+const getPrimaryColor = (logo: string): string => {
+  switch (logo) {
+    case 'baylor-logo.png':
+      return '#003015'; // Baylor green
+    case 'nike-logo.png':
+      return '#111111'; // Nike black
+    case 'veryable-logo.png':
+      return '#0073e6'; // Veryable blue
+    case 'camp-logo.png':
+      return '#ff6600'; // Camp Longhorn orange
+    default:
+      return '#ffffff'; // Default white
+  }
+};
+
 const ExperienceCard: React.FC<ExperienceCardProps> = ({
   title,
   subtitle,
@@ -27,6 +42,8 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   animate,
   transition
 }) => {
+  const bgColor = logo ? getPrimaryColor(logo) : '#ffffff';
+
   return (
     <CardContainer style={style} initial={initial} animate={animate} transition={transition}>
       <Header>
@@ -38,7 +55,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
         </div>
       </Header>
       {logo && (
-        <PeekabooContainer>
+        <PeekabooContainer bgColor={bgColor}>
           <a href={link} target="_blank" rel="noopener noreferrer">
             <PeekabooLogo src={`${BASE_URL}/assets/${logo}`} alt={`${title} logo`} />
           </a>
@@ -49,4 +66,4 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   );
 };
 
-export default ExperienceCard;  // Add default export
+export default ExperienceCard;
